@@ -1,7 +1,8 @@
 name: paystring
-description: A new Flutter package project.
-version: 0.0.1
-homepage: null
+description: PayString is a simple, web-based protocol designed to make it as easy to send someone money as it is to send them an email. With the PayString protocol, you use human-readable addresses to transmit value in the currency of your choice. The PayString network allows participants to reach one another through standardized addresses. An address such as alice$example.com maps to the corresponding URL https://example.com/alice.
+version: 0.0.2
+homepage: https://github.com/Dr-Ginie/PayString_Dart
+repository: https://github.com/Dr-Ginie/PayString_Dart
 
 environment:
   sdk: '>=2.19.6 <3.0.0'

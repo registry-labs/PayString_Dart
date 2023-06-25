@@ -8,14 +8,15 @@ import 'package:regexed_validator/regexed_validator.dart';
 class PayString {
   Future<List<Address>> fetchAddresses(String value,String ledger, String network) async {
     Map<String, String> headers = {
-      "Accept" : "application/$ledger-$network+json"
+      "Accept" : "application/$ledger-$network+json",
+      "PayID-Version" : "1.0"
     };
     List<Address> addressList = [];
     final payString = value.split("\$");
     if(payString.length < 2){
       throw("Bad PayString");
     }
-    if(validator.url('https://${payString[0]}') == false) {
+    if(validator.url('https://${payString[1]}') == false) {
       throw("Bad PayString");
     }
     var url = Uri.parse('https://${payString[1]}/${payString.first}');
