@@ -7,12 +7,14 @@ repository: https://github.com/Dr-Ginie/PayString_Dart
 environment:
   sdk: '>=2.19.6 <3.0.0'
   flutter: ">=1.17.0"
+  
 
 dependencies:
   flutter:
     sdk: flutter
   http: ^0.13.6
   regexed_validator: ^2.0.0+1
+  # agent_dart: ^1.0.0-dev.15
 
 dev_dependencies:
   flutter_lints: ^2.0.0

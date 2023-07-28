@@ -1,0 +1,35 @@
+type Token = record { arbitrary_data : text };
+type FiatAddressDetails = record {
+    accountNumber : text;
+    routingNumber : opt text;
+};
+type CryptoAddressDetails = record {
+    address : text;
+    tag : opt text;
+};
+type AddressDetailsType = variant {
+    CryptoAddress;
+    FiatAddress;
+};
+type AddressDetails = variant {
+    CryptoAddressDetails : CryptoAddressDetails;
+    FiatAddressDetails : FiatAddressDetails;
+};
+type Address = record {
+    addressDetails : AddressDetails;
+    addressDetailsType : AddressDetailsType;
+    environment : opt text;
+    paymentNetwork : text;
+};
+service : {
+    add : (text, Address) -> ();
+    auction : (text) -> (nat32);
+    delete : (text, Address) -> ();
+    deleteAll : (text) -> ();
+    getCounter : () -> (nat) query;
+    getPayId : (text, text, opt text) -> (vec Address) query;
+    getPayIdCount : () -> (nat32) query;
+    getPrice : (text) -> (nat) query;
+    payStringExist : (text) -> (bool) query;
+    setPrice : (nat32, nat) -> ();
+};
